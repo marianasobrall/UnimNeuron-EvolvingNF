@@ -1,0 +1,5 @@
+Rule 1: support=107 sigma=0.175 class_probs=[0.53, 0.47] w=[0.5, 0.5]
+Rule 2: support=115 sigma=0.175 class_probs=[0.566, 0.434] w=[0.5, 0.5]
+Rule 3: support=140 sigma=0.175 class_probs=[0.529, 0.471] w=[0.5, 0.5]
+Rule 4: support=172 sigma=0.175 class_probs=[0.563, 0.437] w=[0.5, 0.5]
+Rule 5: support=124 sigma=0.175 class_probs=[0.529, 0.471] w=[0.5, 0.5]
