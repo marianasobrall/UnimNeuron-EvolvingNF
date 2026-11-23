@@ -1,0 +1,8 @@
+numpy<2.4
+pandas
+matplotlib
+tqdm
+river
+evolvingfuzzysystems
+scipy
+scikit-posthocs

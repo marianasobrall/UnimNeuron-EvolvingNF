@@ -1,0 +1,1 @@
+"""UnimNeuron Safe with persistent rule IDs and an event log (creation, adaptation, merge, deletion, class change). Does not change model decisions."""

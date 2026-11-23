@@ -138,3 +138,13 @@ These exports are intended to support interpretability analysis in the paper.
 
 License: to be defined.  
 Citation details will be added after publication.
+
+## Final project (DSM 2026): rule evolution and memory
+
+Original baseline files are kept unchanged for comparison.
+All project code lives in `src/`; outputs go to `results/`.
+
+Setup:
+    python -m venv venv
+    .\venv\Scripts\Activate.ps1
+    pip install -r requirements.txt

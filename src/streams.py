@@ -1,0 +1,1 @@
+"""Synthetic streams: drift scenarios (A-A-A, A-B-B, A-B-A, A-B-A-B-A) and complexity levels (simple, medium, overlap)."""

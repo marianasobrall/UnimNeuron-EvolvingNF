@@ -1,0 +1,1 @@
+"""Rule memory metrics: centre and sigma change before/after drift, rule activation per concept."""
