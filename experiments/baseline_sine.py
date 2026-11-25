@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from ENF_UnimNeuron_Safe import EvolvingNeuroFuzzyUnimSafe
 
-OUT = ROOT / "results" / "baseline_sine"
+OUT = ROOT / "results" / "1_baseline_sine"
 SEED = 42
 PARAMETERS = dict(safe_threshold=0.07, min_firing_for_update=0.05,
                   tau_merge=0.62, drift_sensitivity=0.35)

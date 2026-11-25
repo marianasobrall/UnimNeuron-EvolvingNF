@@ -11,7 +11,7 @@ from baseline_sine import OUT as BASELINE, PARAMETERS, ROOT, SEED, plt, sine_dat
 from ENF_UnimNeuron_Safe import EvolvingNeuroFuzzyUnimSafe
 from src.instrumented import InstrumentedSafe
 
-OUT = ROOT / "results" / "rule_evolution"
+OUT = ROOT / "results" / "2_rule_evolution"
 EVENT_FIELDS = ("sample", "event", "rule_id", "related_rule_id", "previous_class",
                 "rule_class", "support", "center", "sigma", "class_counts")
 ACTIVATION_FIELDS = ("sample", "rule_id", "activation", "dominant")

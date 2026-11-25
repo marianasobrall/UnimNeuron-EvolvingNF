@@ -1,0 +1,165 @@
+{
+  "dataset": "ConceptDrift_Agrawal",
+  "functions": "0 -> 2",
+  "samples": 20000,
+  "drift_position": 2500,
+  "drift_width": 1000,
+  "drift_window": [
+    2000,
+    3000
+  ],
+  "accuracy_window": 500,
+  "features": [
+    "salary",
+    "commission",
+    "age",
+    "elevel",
+    "car",
+    "zipcode",
+    "hvalue",
+    "hyears",
+    "loan"
+  ],
+  "parameters": {
+    "safe_threshold": 0.07,
+    "min_firing_for_update": 0.05,
+    "tau_merge": 0.62,
+    "drift_sensitivity": 0.35
+  },
+  "written_events": [
+    "absorbed",
+    "adapt",
+    "class_change",
+    "create",
+    "evict",
+    "merge"
+  ],
+  "runs": {
+    "capped": {
+      "max_rules": 5,
+      "exact_match": true,
+      "seconds": 10.9,
+      "final_rules": 5,
+      "rules_ever_created": 19044,
+      "rules_that_ever_predicted": 9,
+      "events": {
+        "create": 19044,
+        "update_consequent": 99988,
+        "adapt": 956,
+        "class_change": 3354,
+        "evict": 19039,
+        "immediate_eviction": 19035
+      },
+      "event_rate_per_1000": {
+        "create": {
+          "before": 826.41,
+          "drift": 901.1,
+          "after": 970.0
+        },
+        "evict": {
+          "before": 823.91,
+          "drift": 901.1,
+          "after": 970.0
+        },
+        "adapt": {
+          "before": 173.59,
+          "drift": 98.9,
+          "after": 30.0
+        },
+        "class_change": {
+          "before": 9.0,
+          "drift": 0.0,
+          "after": 196.24
+        }
+      },
+      "predictive": {
+        "all": {
+          "samples": 20000,
+          "accuracy": 0.5404,
+          "balanced_accuracy": 0.5012,
+          "majority_rate": 0.5523
+        },
+        "before": {
+          "samples": 1999,
+          "accuracy": 0.6688,
+          "balanced_accuracy": 0.5012,
+          "majority_rate": 0.6708
+        },
+        "drift": {
+          "samples": 1001,
+          "accuracy": 0.6144,
+          "balanced_accuracy": 0.5,
+          "majority_rate": 0.6144
+        },
+        "after": {
+          "samples": 17000,
+          "accuracy": 0.5209,
+          "balanced_accuracy": 0.4964,
+          "majority_rate": 0.5347
+        }
+      }
+    },
+    "uncapped": {
+      "max_rules": null,
+      "exact_match": true,
+      "seconds": 163.5,
+      "final_rules": 165,
+      "rules_ever_created": 165,
+      "rules_that_ever_predicted": 165,
+      "events": {
+        "create": 165,
+        "update_consequent": 2112337,
+        "adapt": 19835,
+        "class_change": 65391
+      },
+      "event_rate_per_1000": {
+        "create": {
+          "before": 19.01,
+          "drift": 7.99,
+          "after": 7.0
+        },
+        "evict": {
+          "before": 0.0,
+          "drift": 0.0,
+          "after": 0.0
+        },
+        "adapt": {
+          "before": 980.99,
+          "drift": 992.01,
+          "after": 993.0
+        },
+        "class_change": {
+          "before": 39.52,
+          "drift": 17.98,
+          "after": 3840.82
+        }
+      },
+      "predictive": {
+        "all": {
+          "samples": 20000,
+          "accuracy": 0.5435,
+          "balanced_accuracy": 0.5006,
+          "majority_rate": 0.5523
+        },
+        "before": {
+          "samples": 1999,
+          "accuracy": 0.6693,
+          "balanced_accuracy": 0.5012,
+          "majority_rate": 0.6708
+        },
+        "drift": {
+          "samples": 1001,
+          "accuracy": 0.6144,
+          "balanced_accuracy": 0.5,
+          "majority_rate": 0.6144
+        },
+        "after": {
+          "samples": 17000,
+          "accuracy": 0.5246,
+          "balanced_accuracy": 0.4971,
+          "majority_rate": 0.5347
+        }
+      }
+    }
+  }
+}
