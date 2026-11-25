@@ -1,0 +1,54 @@
+{
+  "dataset": "Sine_synth",
+  "seed": 42,
+  "parameters": {
+    "safe_threshold": 0.07,
+    "min_firing_for_update": 0.05,
+    "tau_merge": 0.62,
+    "drift_sensitivity": 0.35
+  },
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "river": "0.27.0",
+  "matplotlib": "3.11.0",
+  "revision": "c0a214362a89d816180a29a0db3c9d8793710a16",
+  "preprocessing": "First-seen labels; stream-wide min-max scaling",
+  "protocol": "Predict before update; first prediction is encoded class 0",
+  "historical_capped_accuracy": 0.5672,
+  "historical_capped_final_rules": 5,
+  "runs": [
+    {
+      "run": "capped_full",
+      "samples": 40000,
+      "max_rules": 5,
+      "accuracy": 0.567225,
+      "final_rules": 5,
+      "peak_rules": 5,
+      "seconds": 13.846931700129062,
+      "repeat_seconds": 12.20318920002319,
+      "exact_repeat": true
+    },
+    {
+      "run": "capped_quick",
+      "samples": 5000,
+      "max_rules": 5,
+      "accuracy": 0.5704,
+      "final_rules": 5,
+      "peak_rules": 5,
+      "seconds": 2.0814610000234097,
+      "repeat_seconds": 1.8286994001828134,
+      "exact_repeat": true
+    },
+    {
+      "run": "uncapped_quick",
+      "samples": 5000,
+      "max_rules": null,
+      "accuracy": 0.6952,
+      "final_rules": 73,
+      "peak_rules": 73,
+      "seconds": 14.701580099994317,
+      "repeat_seconds": 13.681410300079733,
+      "exact_repeat": true
+    }
+  ]
+}

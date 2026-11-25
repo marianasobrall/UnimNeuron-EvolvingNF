@@ -1,0 +1,58 @@
+{
+  "dataset": "Sine_synth",
+  "seed": 42,
+  "parameters": {
+    "safe_threshold": 0.07,
+    "min_firing_for_update": 0.05,
+    "tau_merge": 0.62,
+    "drift_sensitivity": 0.35
+  },
+  "runs": [
+    {
+      "run": "capped_quick",
+      "samples": 5000,
+      "max_rules": 5,
+      "final_rules": 5,
+      "exact_match": true,
+      "events": {
+        "create": 4409,
+        "update_consequent": 24917,
+        "evict": 4404,
+        "adapt": 591,
+        "class_change": 565,
+        "immediate_eviction": 4397
+      }
+    },
+    {
+      "run": "uncapped_quick",
+      "samples": 5000,
+      "max_rules": null,
+      "final_rules": 73,
+      "exact_match": true,
+      "events": {
+        "create": 73,
+        "update_consequent": 245505,
+        "adapt": 4927,
+        "class_change": 3657
+      }
+    }
+  ],
+  "full_check": {
+    "samples": 40000,
+    "final_rules": 5,
+    "exact_match": true,
+    "logged_counts": {
+      "create": 37056,
+      "prediction_activation": 199985,
+      "update_consequent": 199917,
+      "evict": 37051,
+      "adapt": 2944,
+      "class_change": 5334
+    }
+  },
+  "technical_merge_check": {
+    "samples": 30,
+    "merges": 29,
+    "exact_match": true
+  }
+}
