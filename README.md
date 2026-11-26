@@ -144,6 +144,10 @@ Citation details will be added after publication.
 Original baseline files are kept unchanged for comparison.
 All project code lives in `src/`; outputs go to `results/`.
 
+The T29 rule-memory analysis reuses the T16 event logs without changing the
+classifier. See `docs/point3_rule_memory.md` for the method, preliminary
+findings, limitations, and reproduction commands.
+
 Setup:
     python -m venv venv
     .\venv\Scripts\Activate.ps1
