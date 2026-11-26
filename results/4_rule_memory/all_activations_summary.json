@@ -1,0 +1,83 @@
+{
+  "stream": "ConceptDrift_Agrawal functions 0->2",
+  "phases": {
+    "before": [
+      1,
+      1999
+    ],
+    "drift": [
+      2000,
+      3000
+    ],
+    "after": [
+      3001,
+      20000
+    ]
+  },
+  "versions": {
+    "python": "3.14.7",
+    "numpy": "2.5.3",
+    "river": "0.27.0"
+  },
+  "semantics": "all active rules, pre-update; relative activation is raw activation divided by the sample total",
+  "runs": {
+    "capped": {
+      "samples": 20000,
+      "exact_match_to_T16": true,
+      "final_rules": 5,
+      "seconds": 1.8,
+      "phase_weight_sums": {
+        "before": 0.9994997498749373,
+        "drift": 1.0000000000000004,
+        "after": 0.9999999999999996
+      },
+      "activation_selectivity": {
+        "before": {
+          "samples_with_multiple_rules": 1997,
+          "mean_normalized_entropy": 0.9999479289575872,
+          "mean_winner_to_mean_ratio": 1.007647252588396
+        },
+        "drift": {
+          "samples_with_multiple_rules": 1001,
+          "mean_normalized_entropy": 0.9999572502025963,
+          "mean_winner_to_mean_ratio": 1.0059753414414063
+        },
+        "after": {
+          "samples_with_multiple_rules": 17000,
+          "mean_normalized_entropy": 0.9999759192292061,
+          "mean_winner_to_mean_ratio": 1.0041419856601987
+        }
+      },
+      "rule_phase_rows": 19
+    },
+    "uncapped": {
+      "samples": 20000,
+      "exact_match_to_T16": true,
+      "final_rules": 165,
+      "seconds": 27.6,
+      "phase_weight_sums": {
+        "before": 0.9994997498749373,
+        "drift": 0.9999999999999998,
+        "after": 0.9999999999999999
+      },
+      "activation_selectivity": {
+        "before": {
+          "samples_with_multiple_rules": 1997,
+          "mean_normalized_entropy": 0.993401141100574,
+          "mean_winner_to_mean_ratio": 1.4278821628724907
+        },
+        "drift": {
+          "samples_with_multiple_rules": 1001,
+          "mean_normalized_entropy": 0.9934544816245807,
+          "mean_winner_to_mean_ratio": 1.3610143237140893
+        },
+        "after": {
+          "samples_with_multiple_rules": 17000,
+          "mean_normalized_entropy": 0.9956445466007099,
+          "mean_winner_to_mean_ratio": 1.298793609744737
+        }
+      },
+      "rule_phase_rows": 249
+    }
+  }
+}

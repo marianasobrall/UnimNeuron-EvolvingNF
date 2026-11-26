@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from ENF_UnimNeuron_Safe import EvolvingNeuroFuzzyUnimSafe
 from src.instrumented import InstrumentedSafe
-from src.memory_metrics import (RuleMemory, compare_snapshots,
+from src.memory_metrics import (PhaseActivationAccumulator, RuleMemory, compare_snapshots,
                                 dominant_activation_by_phase, rule_snapshots)
 
 EVENT_FIELDS = ("sample", "event", "rule_id", "related_rule_id", "previous_class",
@@ -75,6 +75,25 @@ class MemoryMetricsTests(unittest.TestCase):
         self.assertEqual(sizes, {"A": 2, "B": 1})
         self.assertEqual(rows[0]["dominant_fraction"], 0.5)
         self.assertEqual(rows[1]["mean_dominant_activation"], 0.8)
+
+    def test_all_rule_activations_are_normalized_per_prediction(self):
+        trace = PhaseActivationAccumulator({"A": (1, 2), "B": (3, 3)})
+        for sample, rule_id, activation, dominant in (
+                (1, 4, 0.6, 1), (1, 7, 0.4, 0),
+                (2, 4, 0.2, 0), (2, 7, 0.8, 1),
+                (3, 4, 0.5, 1)):
+            trace.on_activation({"sample": sample, "rule_id": rule_id,
+                                 "activation": activation, "dominant": dominant})
+        rows = {(row["phase"], row["rule_id"]): row for row in trace.rows()}
+        self.assertEqual(rows[("A", 4)]["samples_present"], 2)
+        self.assertAlmostEqual(rows[("A", 4)]["mean_relative_activation_when_present"], 0.4)
+        self.assertEqual(rows[("A", 4)]["dominant_count"], 1)
+        self.assertEqual(rows[("B", 4)]["phase_mean_relative_activation"], 1.0)
+        self.assertEqual(rows[("B", 4)]["last_dominant_sample"], 3)
+        selectivity = trace.phase_selectivity()
+        self.assertEqual(selectivity["A"]["samples_with_multiple_rules"], 2)
+        self.assertAlmostEqual(selectivity["A"]["mean_winner_to_mean_ratio"], 1.4)
+        self.assertNotIn("B", selectivity)  # one active rule provides no selectivity test
 
 
 if __name__ == "__main__":
