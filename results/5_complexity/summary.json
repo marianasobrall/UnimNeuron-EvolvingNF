@@ -1,0 +1,212 @@
+{
+  "samples": 30000,
+  "seed": 42,
+  "scaling": "min-max over the whole stream",
+  "f1_window": 500,
+  "parameters": {
+    "safe_threshold": 0.07,
+    "min_firing_for_update": 0.05,
+    "tau_merge": 0.62,
+    "drift_sensitivity": 0.35
+  },
+  "levels": {
+    "simple": {
+      "separation": 6.0,
+      "bayes_accuracy": 0.9987,
+      "runs": {
+        "capped": {
+          "max_rules": 5,
+          "seconds": 29.5,
+          "accuracy": 0.8085,
+          "macro_f1": 0.8032,
+          "final_rules": 5,
+          "rules_created": 28398,
+          "rules_ever_dominant": 7,
+          "immediate_eviction_share": 0.9997,
+          "events": {
+            "create": 28398,
+            "update_consequent": 149707,
+            "adapt": 1602,
+            "class_change": 38,
+            "evict": 28393,
+            "immediate_eviction": 28389
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 4,
+            "samples_to_90pct_of_final": 10,
+            "rules_created_per_block": [
+              4598,
+              4752,
+              4735,
+              4752,
+              4769,
+              4792
+            ],
+            "block_size": 5000
+          }
+        },
+        "uncapped": {
+          "max_rules": null,
+          "seconds": 318.5,
+          "accuracy": 0.9907,
+          "macro_f1": 0.9907,
+          "final_rules": 50,
+          "rules_created": 50,
+          "rules_ever_dominant": 50,
+          "immediate_eviction_share": 0.0,
+          "events": {
+            "create": 50,
+            "update_consequent": 1006939,
+            "adapt": 29950,
+            "class_change": 6716
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 1047,
+            "samples_to_90pct_of_final": 13628,
+            "rules_created_per_block": [
+              31,
+              9,
+              6,
+              2,
+              1,
+              1
+            ],
+            "block_size": 5000
+          }
+        }
+      }
+    },
+    "medium": {
+      "separation": 2.0,
+      "bayes_accuracy": 0.8413,
+      "runs": {
+        "capped": {
+          "max_rules": 5,
+          "seconds": 58.0,
+          "accuracy": 0.5277,
+          "macro_f1": 0.5277,
+          "final_rules": 5,
+          "rules_created": 28400,
+          "rules_ever_dominant": 6,
+          "immediate_eviction_share": 0.9996,
+          "events": {
+            "create": 28400,
+            "update_consequent": 148651,
+            "class_change": 5542,
+            "adapt": 1600,
+            "evict": 28395,
+            "immediate_eviction": 28388
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 3,
+            "samples_to_90pct_of_final": 5,
+            "rules_created_per_block": [
+              4504,
+              4735,
+              4763,
+              4774,
+              4803,
+              4821
+            ],
+            "block_size": 5000
+          }
+        },
+        "uncapped": {
+          "max_rules": null,
+          "seconds": 542.8,
+          "accuracy": 0.7449,
+          "macro_f1": 0.7448,
+          "final_rules": 76,
+          "rules_created": 76,
+          "rules_ever_dominant": 75,
+          "immediate_eviction_share": 0.0,
+          "events": {
+            "create": 76,
+            "update_consequent": 1484804,
+            "class_change": 33453,
+            "adapt": 29924
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 1825,
+            "samples_to_90pct_of_final": 18570,
+            "rules_created_per_block": [
+              52,
+              7,
+              8,
+              4,
+              4,
+              1
+            ],
+            "block_size": 5000
+          }
+        }
+      }
+    },
+    "overlap": {
+      "separation": 0.5,
+      "bayes_accuracy": 0.5987,
+      "runs": {
+        "capped": {
+          "max_rules": 5,
+          "seconds": 62.4,
+          "accuracy": 0.508,
+          "macro_f1": 0.5077,
+          "final_rules": 5,
+          "rules_created": 26282,
+          "rules_ever_dominant": 9,
+          "immediate_eviction_share": 0.9996,
+          "events": {
+            "create": 26282,
+            "update_consequent": 146128,
+            "class_change": 6753,
+            "evict": 26277,
+            "adapt": 3718,
+            "immediate_eviction": 26271
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 3,
+            "samples_to_90pct_of_final": 5,
+            "rules_created_per_block": [
+              4149,
+              4450,
+              4392,
+              4432,
+              4442,
+              4417
+            ],
+            "block_size": 5000
+          }
+        },
+        "uncapped": {
+          "max_rules": null,
+          "seconds": 428.4,
+          "accuracy": 0.5356,
+          "macro_f1": 0.5356,
+          "final_rules": 70,
+          "rules_created": 70,
+          "rules_ever_dominant": 69,
+          "immediate_eviction_share": 0.0,
+          "events": {
+            "create": 70,
+            "update_consequent": 1329776,
+            "class_change": 51733,
+            "adapt": 29930
+          },
+          "growth": {
+            "samples_to_50pct_of_final": 1287,
+            "samples_to_90pct_of_final": 11664,
+            "rules_created_per_block": [
+              48,
+              13,
+              6,
+              1,
+              1,
+              1
+            ],
+            "block_size": 5000
+          }
+        }
+      }
+    }
+  }
+}
