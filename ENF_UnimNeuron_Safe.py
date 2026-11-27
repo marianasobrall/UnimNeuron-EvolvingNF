@@ -288,9 +288,12 @@ class EvolvingNeuroFuzzyUnimSafe:
 
         # enforce max_rules by removing least supported rule
         if self.max_rules is not None and self.n_rules_ > self.max_rules:
-            supports = np.array([r.support for r in self.rules], dtype=int)
-            idx = int(np.argmin(supports))
-            del self.rules[idx]
+            del self.rules[self._eviction_index()]
+
+    def _eviction_index(self) -> int:
+        """Select a rule after appending an over-budget candidate."""
+        supports = np.array([r.support for r in self.rules], dtype=int)
+        return int(np.argmin(supports))
 
     # --------------------------------------------------------------
 

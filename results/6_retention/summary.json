@@ -1,0 +1,1141 @@
+{
+  "versions": {
+    "python": "3.13.5",
+    "numpy": "2.3.5",
+    "river": "0.27.0"
+  },
+  "parameters": {
+    "safe_threshold": 0.07,
+    "min_firing_for_update": 0.05,
+    "tau_merge": 0.62,
+    "drift_sensitivity": 0.35
+  },
+  "recovery": {
+    "window": 250,
+    "reference_length": 1000,
+    "threshold_fraction": 0.9,
+    "consecutive_windows": 2,
+    "common_threshold": "Maximum of the three individual thresholds within each case"
+  },
+  "cases": [
+    {
+      "scenario": "ab",
+      "seed": 42,
+      "budget": 5,
+      "samples": 20000,
+      "phases": {
+        "A": [
+          0,
+          1999
+        ],
+        "Transi\u00e7\u00e3o": [
+          1999,
+          3000
+        ],
+        "B": [
+          3000,
+          20000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.43773950434535247,
+          "final_rules": 5,
+          "events": {
+            "create": 19044,
+            "evict": 19039
+          },
+          "immediate_evictions": 19035,
+          "replacements": 4,
+          "seconds": 12.050599499998498,
+          "phase_f1": {
+            "A": 0.41071625776159654,
+            "Transi\u00e7\u00e3o": 0.3805693069306931,
+            "B": 0.4356762194102337
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36364719904648396,
+              "delay": 2000
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.42219502297391054,
+              "delay": 2250
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.48976373547105345,
+          "final_rules": 5,
+          "events": {
+            "create": 1543,
+            "evict": 1538
+          },
+          "immediate_evictions": 0,
+          "replacements": 1538,
+          "seconds": 12.624244400009047,
+          "phase_f1": {
+            "A": 0.42439059137405916,
+            "Transi\u00e7\u00e3o": 0.48245067890941373,
+            "B": 0.4847290402548987
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.3630071599045346,
+              "delay": 1000
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.42219502297391054,
+              "delay": 1000
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.5092359610720787,
+          "final_rules": 5,
+          "events": {
+            "create": 4769,
+            "evict": 4764
+          },
+          "immediate_evictions": 0,
+          "replacements": 4764,
+          "seconds": 12.45426569999836,
+          "phase_f1": {
+            "A": 0.47936861170392,
+            "Transi\u00e7\u00e3o": 0.4846523684100506,
+            "B": 0.5040710620692456
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.42219502297391054,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.42219502297391054,
+              "delay": 500
+            }
+          }
+        }
+      }
+    },
+    {
+      "scenario": "aba",
+      "seed": 42,
+      "budget": 5,
+      "samples": 15000,
+      "phases": {
+        "A1": [
+          0,
+          5000
+        ],
+        "B": [
+          5000,
+          10000
+        ],
+        "A2": [
+          10000,
+          15000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.4222595362382262,
+          "final_rules": 5,
+          "events": {
+            "create": 14709,
+            "evict": 14704
+          },
+          "immediate_evictions": 14686,
+          "replacements": 18,
+          "seconds": 9.475115799999912,
+          "phase_f1": {
+            "A1": 0.40271947999522173,
+            "B": 0.41527775223790797,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              4,
+              5,
+              6,
+              11,
+              23
+            ],
+            "survived_ids": [
+              4,
+              5,
+              6,
+              11,
+              23
+            ],
+            "reused_ids": [
+              23
+            ],
+            "dominance_share": 1.0,
+            "activation_share": 1.0,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.4040807073226026,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.4040807073226026,
+              "delay": 2000
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.4646101701584108,
+          "final_rules": 5,
+          "events": {
+            "create": 1072,
+            "evict": 1067
+          },
+          "immediate_evictions": 0,
+          "replacements": 1067,
+          "seconds": 8.779201699988334,
+          "phase_f1": {
+            "A1": 0.4149757812554606,
+            "B": 0.472468821076982,
+            "A2": 0.4115123870103783
+          },
+          "memory": {
+            "cohort_ids": [
+              439,
+              457,
+              460,
+              461,
+              462
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.41216063820529625
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.37030996676019223,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.37030996676019223,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.4040807073226026,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.4040807073226026,
+              "delay": 1000
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.505035130284395,
+          "final_rules": 5,
+          "events": {
+            "create": 3361,
+            "evict": 3356
+          },
+          "immediate_evictions": 0,
+          "replacements": 3356,
+          "seconds": 8.766922700000578,
+          "phase_f1": {
+            "A1": 0.45890042920958996,
+            "B": 0.495365604152215,
+            "A2": 0.4749189255141635
+          },
+          "memory": {
+            "cohort_ids": [
+              1104,
+              1105,
+              1106,
+              1107,
+              1108
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.4924731182795699
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.4040807073226026,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.4040807073226026,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.4040807073226026,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.4040807073226026,
+              "delay": 500
+            }
+          }
+        }
+      }
+    },
+    {
+      "scenario": "aba",
+      "seed": 43,
+      "budget": 5,
+      "samples": 15000,
+      "phases": {
+        "A1": [
+          0,
+          5000
+        ],
+        "B": [
+          5000,
+          10000
+        ],
+        "A2": [
+          10000,
+          15000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.4304950237628323,
+          "final_rules": 5,
+          "events": {
+            "create": 14639,
+            "evict": 14634
+          },
+          "immediate_evictions": 14621,
+          "replacements": 13,
+          "seconds": 8.754630600000382,
+          "phase_f1": {
+            "A1": 0.40105414470531864,
+            "B": 0.43406986235141926,
+            "A2": 0.405893536121673
+          },
+          "memory": {
+            "cohort_ids": [
+              5,
+              6,
+              7,
+              12,
+              18
+            ],
+            "survived_ids": [
+              5,
+              6,
+              7,
+              12,
+              18
+            ],
+            "reused_ids": [
+              18
+            ],
+            "dominance_share": 1.0,
+            "activation_share": 1.0,
+            "first_1000_f1": 0.4044073853484217
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.3584837545126354,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.3584837545126354,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.43938182994386604,
+              "delay": null
+            },
+            "A2": {
+              "threshold": 0.43938182994386604,
+              "delay": null
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.4658039591807388,
+          "final_rules": 5,
+          "events": {
+            "create": 1168,
+            "evict": 1163
+          },
+          "immediate_evictions": 0,
+          "replacements": 1163,
+          "seconds": 8.820455299995956,
+          "phase_f1": {
+            "A1": 0.41778410750953204,
+            "B": 0.4757637294720113,
+            "A2": 0.41532006248653697
+          },
+          "memory": {
+            "cohort_ids": [
+              459,
+              461,
+              466,
+              470,
+              472
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.41773116432201624
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36043445133802926,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.36043445133802926,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.43938182994386604,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.43938182994386604,
+              "delay": null
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.5014733561891392,
+          "final_rules": 5,
+          "events": {
+            "create": 3486,
+            "evict": 3481
+          },
+          "immediate_evictions": 0,
+          "replacements": 3481,
+          "seconds": 8.609890499996254,
+          "phase_f1": {
+            "A1": 0.4692779631923505,
+            "B": 0.5047759654025531,
+            "A2": 0.45376391762735246
+          },
+          "memory": {
+            "cohort_ids": [
+              1182,
+              1183,
+              1184,
+              1185,
+              1186
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.42936074097269356
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.43938182994386604,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.43938182994386604,
+              "delay": 1250
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.43938182994386604,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.43938182994386604,
+              "delay": 1250
+            }
+          }
+        }
+      }
+    },
+    {
+      "scenario": "aba",
+      "seed": 44,
+      "budget": 5,
+      "samples": 15000,
+      "phases": {
+        "A1": [
+          0,
+          5000
+        ],
+        "B": [
+          5000,
+          10000
+        ],
+        "A2": [
+          10000,
+          15000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.43276647825786907,
+          "final_rules": 5,
+          "events": {
+            "create": 14749,
+            "evict": 14744
+          },
+          "immediate_evictions": 14722,
+          "replacements": 22,
+          "seconds": 9.009564399995725,
+          "phase_f1": {
+            "A1": 0.4042471918578113,
+            "B": 0.4419342911341292,
+            "A2": 0.39954365317641405
+          },
+          "memory": {
+            "cohort_ids": [
+              3,
+              15,
+              19,
+              26,
+              27
+            ],
+            "survived_ids": [
+              3,
+              15,
+              19,
+              26,
+              27
+            ],
+            "reused_ids": [
+              3,
+              15,
+              19,
+              26,
+              27
+            ],
+            "dominance_share": 1.0,
+            "activation_share": 1.0,
+            "first_1000_f1": 0.40617577197149646
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36396664681357954,
+              "delay": 1250
+            },
+            "A2": {
+              "threshold": 0.36396664681357954,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.38959829768039345,
+              "delay": 1250
+            },
+            "A2": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.4602936752810374,
+          "final_rules": 5,
+          "events": {
+            "create": 1143,
+            "evict": 1138
+          },
+          "immediate_evictions": 0,
+          "replacements": 1138,
+          "seconds": 8.733044900000095,
+          "phase_f1": {
+            "A1": 0.4164158330911383,
+            "B": 0.47489976410060863,
+            "A2": 0.4101925936288033
+          },
+          "memory": {
+            "cohort_ids": [
+              401,
+              426,
+              431,
+              438,
+              441
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.4184661907320126
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.37595804788981463,
+              "delay": 1750
+            },
+            "A2": {
+              "threshold": 0.37595804788981463,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.38959829768039345,
+              "delay": 1750
+            },
+            "A2": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.5011019814862134,
+          "final_rules": 5,
+          "events": {
+            "create": 3386,
+            "evict": 3381
+          },
+          "immediate_evictions": 0,
+          "replacements": 3381,
+          "seconds": 9.034420800002408,
+          "phase_f1": {
+            "A1": 0.4521290894227805,
+            "B": 0.5043084614793885,
+            "A2": 0.4720682803932586
+          },
+          "memory": {
+            "cohort_ids": [
+              1152,
+              1153,
+              1154,
+              1155,
+              1156
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.47130298082186656
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.38959829768039345,
+              "delay": 500
+            }
+          }
+        }
+      }
+    },
+    {
+      "scenario": "aba",
+      "seed": 42,
+      "budget": 10,
+      "samples": 15000,
+      "phases": {
+        "A1": [
+          0,
+          5000
+        ],
+        "B": [
+          5000,
+          10000
+        ],
+        "A2": [
+          10000,
+          15000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.42046592064907595,
+          "final_rules": 10,
+          "events": {
+            "create": 13395,
+            "evict": 13384,
+            "merge": 1,
+            "absorbed": 1
+          },
+          "immediate_evictions": 13376,
+          "replacements": 8,
+          "seconds": 16.67422390000138,
+          "phase_f1": {
+            "A1": 0.40301101117046406,
+            "B": 0.41145923489700537,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              13,
+              15,
+              16
+            ],
+            "survived_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              8,
+              13,
+              15,
+              16
+            ],
+            "reused_ids": [
+              13,
+              15,
+              16
+            ],
+            "dominance_share": 0.8394,
+            "activation_share": 0.8864483075727723,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.3799341249891653,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.3799341249891653,
+              "delay": 500
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.4303419492153311,
+          "final_rules": 10,
+          "events": {
+            "create": 444,
+            "evict": 434
+          },
+          "immediate_evictions": 0,
+          "replacements": 434,
+          "seconds": 15.634468099990045,
+          "phase_f1": {
+            "A1": 0.4034421424513679,
+            "B": 0.4282850382902673,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              49,
+              73,
+              104,
+              123,
+              128,
+              131,
+              133,
+              138,
+              139,
+              149
+            ],
+            "survived_ids": [
+              49
+            ],
+            "reused_ids": [
+              49
+            ],
+            "dominance_share": 0.335,
+            "activation_share": 0.11039348329816216,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.3799341249891653,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.3799341249891653,
+              "delay": 500
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.4558661251665252,
+          "final_rules": 10,
+          "events": {
+            "create": 782,
+            "evict": 772
+          },
+          "immediate_evictions": 0,
+          "replacements": 772,
+          "seconds": 15.519178200003807,
+          "phase_f1": {
+            "A1": 0.41002949852507375,
+            "B": 0.4584899367065759,
+            "A2": 0.4111968907097262
+          },
+          "memory": {
+            "cohort_ids": [
+              315,
+              316,
+              317,
+              318,
+              319,
+              320,
+              321,
+              322,
+              323,
+              324
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.42729541573624064
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.3799341249891653,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.3799341249891653,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.3799341249891653,
+              "delay": 1000
+            },
+            "A2": {
+              "threshold": 0.3799341249891653,
+              "delay": 500
+            }
+          }
+        }
+      }
+    },
+    {
+      "scenario": "aba",
+      "seed": 42,
+      "budget": 20,
+      "samples": 15000,
+      "phases": {
+        "A1": [
+          0,
+          5000
+        ],
+        "B": [
+          5000,
+          10000
+        ],
+        "A2": [
+          10000,
+          15000
+        ]
+      },
+      "runs": {
+        "support": {
+          "macro_f1": 0.41232385532385163,
+          "final_rules": 20,
+          "events": {
+            "create": 9715,
+            "evict": 9692,
+            "merge": 3,
+            "absorbed": 3
+          },
+          "immediate_evictions": 9675,
+          "replacements": 17,
+          "seconds": 29.987519899994368,
+          "phase_f1": {
+            "A1": 0.40301101117046406,
+            "B": 0.3984309460905728,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              175
+            ],
+            "survived_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "reused_ids": [
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            "dominance_share": 0.8942,
+            "activation_share": 0.9465535287165021,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          }
+        },
+        "lru": {
+          "macro_f1": 0.414814550691781,
+          "final_rules": 20,
+          "events": {
+            "create": 207,
+            "evict": 187
+          },
+          "immediate_evictions": 0,
+          "replacements": 187,
+          "seconds": 27.676988100007293,
+          "phase_f1": {
+            "A1": 0.4029381522086512,
+            "B": 0.40369191790185494,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              16,
+              18,
+              20,
+              23,
+              24,
+              25,
+              26,
+              30,
+              31,
+              33,
+              58,
+              61,
+              63,
+              67,
+              69,
+              73,
+              75,
+              76,
+              78,
+              79
+            ],
+            "survived_ids": [
+              18,
+              33,
+              73,
+              75
+            ],
+            "reused_ids": [
+              18,
+              33,
+              73,
+              75
+            ],
+            "dominance_share": 0.4408,
+            "activation_share": 0.13616695067981724,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          }
+        },
+        "fifo": {
+          "macro_f1": 0.42453379953379955,
+          "final_rules": 20,
+          "events": {
+            "create": 279,
+            "evict": 259
+          },
+          "immediate_evictions": 0,
+          "replacements": 259,
+          "seconds": 30.591320000006817,
+          "phase_f1": {
+            "A1": 0.4029381522086512,
+            "B": 0.41799557676638344,
+            "A2": 0.4046201476542034
+          },
+          "memory": {
+            "cohort_ids": [
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90
+            ],
+            "survived_ids": [],
+            "reused_ids": [],
+            "dominance_share": 0.0,
+            "activation_share": 0.0,
+            "first_1000_f1": 0.4026284348864994
+          },
+          "recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          },
+          "common_recovery": {
+            "B": {
+              "threshold": 0.36492271105826396,
+              "delay": 750
+            },
+            "A2": {
+              "threshold": 0.36492271105826396,
+              "delay": 500
+            }
+          }
+        }
+      }
+    }
+  ],
+  "support_matches_ab_baseline": true
+}
