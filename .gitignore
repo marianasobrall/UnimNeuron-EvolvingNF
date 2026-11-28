@@ -205,3 +205,16 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Generated experiment CSVs. Keep inputs used by other experiments.
+/results/1_baseline_sine/*.csv
+!/results/1_baseline_sine/capped_full.csv
+!/results/1_baseline_sine/capped_quick.csv
+!/results/1_baseline_sine/uncapped_quick.csv
+/results/2_rule_evolution/*.csv
+/results/3_drift_agrawal/*.csv
+!/results/3_drift_agrawal/capped_samples.csv
+!/results/3_drift_agrawal/uncapped_samples.csv
+/results/4_rule_memory/*.csv
+/results/5_complexity/*.csv
+/results/6_retention/*.csv
